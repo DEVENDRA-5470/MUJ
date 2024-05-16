@@ -1,0 +1,364 @@
+NAME : DEVENDRA YADAV
+INTERNAL ASSIGNMENT C PROGRAMMING
+=================================================SET1==================================================
+Q.1=>
+Basic Structure of a C Program:
+1.Create a file using .c extension:
+Before writing the code, you need to create a .c extension file where your C code will store.
+You can use any text editor to create and edit this file.
+For example : first_program.c
+2.Include Header Files:
+So at the beginning of a C program, you have typically include necessary header files using
+#include directry. These files contain declarations and functions that your program will be
+use.
+For Example : #include <stdio.h>
+3.Write Main Function:
+Every C program must have a main() function. It serves as the entry point for the programs,
+where execution will begins and ends. The structure of the main() function looks like this:
+for example:
+int main() {
+ // Your code
+ return 0;
+}
+Here, you can write the code that you want your program to execute inside the main()
+function.
+4.Writing Code Inside Main Function:
+Inside main() function, you write the real code that you want your program to perform. This
+can include declaring variables, calling functions, performing calculations,algorithms, and
+more.
+5.Work of Return Statement:
+At the end of the main() function, you have include a return statement. This statement
+indicates the status of program and its execution. By convention it return 0; signifies
+successful termination of program, while a nonzero value indicates an error.
+
+
+Explanation of printf() and scanf() Functions in C programming with
+Examples:
+printf():
+The printf() function is used to print formatted output to the standard output, typically the
+console. It allows you to display text, numbers, and other data on the screen.
+For example:
+#include <stdio.h>
+int main() {
+ int num = 10;
+ printf("The value of num is: %d\n", num);
+ return 0;
+}
+In above example, %d is a format specifier used to print the value of the num variable as an
+integer.
+scanf():
+The scanf() function is used to read input from the standard input, usually the keyboard. It
+allows you to accept data entered by the user.
+For Example:
+#include <stdio.h>
+int main() {
+ int num;
+ printf("Enter a number: ");
+ scanf("%d", &num);
+ printf("You entered: %d\n", num);
+ return 0;
+}
+In above example, %d is a format specifier used to read an integer value entered by the user.
+The & operator is used to get the memory address of the num variable so that scanf() can
+store the input value there.
+
+Summarise:
+The basic structure of a C program involves including necessary header files, creating a .c
+file, defining a main() function, writing code inside the main() function, and including the
+return statement. printf() and scanf() functions are essential for outputting and inputting data, 
+respectively, in the C programs.
+
+
+Q.2================>
+In computer programming,
+a function is like a recipe. Just like a recipe tells you how to cook a meal, a function tells the computer how to do a specific task. You can think of it as a small, selfcontained piece of code designed to perform a particular job.
+
+There are different types of functions based on how they handle information and what they give back:
+
+Passing Information:
+
+Pass by Value:
+Let,Imagine you're giving someone a copy of a recipe. They can read and use it, but any changes they make won't affect your original recipe. Similarly, in pass by value, the function gets a copy of the data, and changes made inside the function don't affect the original data.
+
+
+Pass by Reference:
+Let, imagine instead of giving a copy of the recipe, you're giving the actual recipe book. If someone adds a new recipe to the book, it changes for everyone who uses it. This is like pass by reference, where the function works directly with the original data, so changes made inside the function affect the original data.
+
+Returning Information:
+
+Void Functions: 
+These functions are like a friend who listens to your story but doesn't give any advice or feedback. They do their job but don't give back any specific information.
+NonVoid Functions: 
+On the other hand, nonvoid functions are like a friend who not only listens to your story but also gives you some helpful advice or feedback. They do their job and give back some useful information.
+Here's a simpler example using a reallife scenario:
+
+#include <stdio.h>
+void calculate_area(int length, int width) {
+    int area = length * width;
+    printf("Area of the rectangle: %d\n", area);
+}
+
+int main() {
+    int length = 5;
+    int width = 3;
+    calculate_area(length, width);
+    return 0;
+}
+
+Output: Area of the rectangle: 15
+
+
+#include <stdio.h>
+
+// NonVoid Function 
+int change_length(int length, int new_length) {
+    length = new_length;
+    return length;
+}
+
+// Main function
+int main() {
+    int length = 5; 
+    printf("Original length of the rectangle: %d\n", length);
+
+    length = change_length(length, 7);
+    printf("Updated length of the rectangle: %d\n", length);
+    
+    return 0;
+}
+
+Output:
+Original length of the rectangle: 5
+Updated length of the rectangle: 7
+
+
+Imagine you have a friend who loves math. You ask them to help you with some calculations. You give them a piece of paper with some numbers written on it.
+
+If they just look at the numbers, do some calculations, and tell you the result without changing the original numbers, it's like pass by value.
+But if they take the paper, write down some additional numbers, and then tell you the final result, it's like pass by reference because they've directly modified the original information.
+Similarly, if your friend just tells you the result without any extra information, it's like a void function. But if they give you some additional insights along with the result, it's like a nonvoid function.
+
+So, in programming, functions can work in different ways depending on how they handle information .
+
+
+Q3
+In C programming, 
+Loops are essential constructs that allow executing a block of code repeatedly until a certain condition is met. 
+There are three main types of loops in C  the for loop, the while loop, and the dowhile loop, each serving unique purposes.
+
+1. For Loop:
+   The for loop is a compact and efficient way to iterate over a fixed range of values. It consists of three parts: initialization, condition, and       iteration.
+   Initialization: It initializes the loop control variable to an initial value.
+   Condition: It specifies the condition to be evaluated before each iteration.
+   Iteration: It updates the loop control variable after each iteration.
+   
+ Example:
+#include <stdio.h>
+int main() {
+    // Example of a for loop to print numbers from 1 to 5
+    for (int i = 1; i <= 5; i++) {
+        printf("%d ", i);
+    }
+    printf("\n");
+    return 0;
+}
+```
+Output:1 2 3 4 5
+
+2.While Loop:
+The while loop is utilized when the number of iterations is uncertain and depends on a condition. It executes a block of code repeatedly as long as the condition remains true. The condition is evaluated before each iteration, and if it's true, the loop continues; otherwise, it terminates. You can also include an incrementer or decrementer inside the loop to control the iteration process.
+   
+  Example:
+#include <stdio.h>
+int main() {
+    // Example of a while loop to print numbers from 1 to 5
+    int i = 1;
+    while (i <= 5) {
+        printf("%d ", i);
+        i++;
+    }
+    printf("\n");
+    return 0;
+}
+Output: 1 2 3 4 5
+
+
+3. DoWhile Loop:
+   The dowhile loop is similar to the while loop but ensures that the loop body executes at least once before checking the condition. It's useful 	    when you need to execute a block of code at least once, regardless of the condition's initial evaluation.
+  Condition: It evaluates the expression after each iteration. If true, the loop continues; otherwise, it terminates.
+  
+Example:
+#include <stdio.h>
+
+int main() {
+    // Example of a dowhile loop to print numbers from 1 to 5
+    int i = 1;
+    do {
+        printf("%d ", i);
+        i++;
+    } while (i <= 5);
+    printf("\n");
+    return 0;
+}
+Output:1 2 3 4 5
+
+Summarise:
+For Loop:
+
+Used for executing a block of code a fixed number of times.
+Consists of initialization, condition, and iteration parts.
+Syntax: for (initialization; condition; iteration) { // code block }
+While Loop:
+
+Used when the number of iterations is uncertain and depends on a condition.
+Repeats a block of code as long as the condition remains true.
+Syntax: while (condition) { // code block }
+DoWhile Loop:
+
+Similar to the while loop but guarantees that the loop body executes at least once before checking the condition.
+Useful when you need to execute a block of code at least once, regardless of the condition's initial evaluation.
+Syntax: do { // code block } while (condition);
+
+These loops are fundamental in controlling the flow of programs and performing repetitive tasks efficiently in C programming. Each loop type has its specific use cases and syntax, allowing programmers to choose the most suitable loop for a given scenario.
+
+
+
+
+
+
+=================================================SET1==================================================
+Q.4===========>
+In C programming, storage classes are used to define the scope, lifetime, and visibility of variables within a program. They help programmers manage memory allocation and control how variables are accessed and manipulated. There are four main types of storage classes in C: automatic, static, register, and external. Let's explain each of them in a structured manner using simple words:
+
+1. Automatic Storage Class:
+    Purpose: Automatic storage class is used to declare variables that are created and destroyed automatically when the block in which they are defined is entered and exited, respectively.
+    Key Points:
+      Variables declared within a function without any storage class specifier are automatically of automatic storage class.
+      They are created when the function is called and destroyed when the function exits.
+      They have local scope and are accessible only within the function in which they are declared.
+      Example: `int x;` within a function without the `static` keyword.
+
+2. Static Storage Class:
+    Purpose: Static storage class is used to declare variables that retain their values between function calls and have a lifetime throughout the program's execution.
+    Key Points:
+      Variables declared with the `static` keyword within a function have static storage class.
+      They are initialized only once before the program starts and retain their values between function calls.
+      They have local scope if declared within a function or file scope if declared outside any function.
+      Example: `static int count = 0;` within a function.
+
+3. Register Storage Class:
+    Purpose: Register storage class is used to optimize the access time of variables by storing them in CPU registers rather than memory.
+    Key Points:
+      Variables declared with the `register` keyword are stored in CPU registers if sufficient registers are available.
+      They are accessed faster than variables stored in memory, improving program performance.
+      The compiler may ignore the `register` keyword if there are not enough registers available.
+      They have local scope and behave similarly to automatic variables.
+      Example: `register int i;`
+
+4. External Storage Class:
+    Purpose: External storage class is used to declare variables that can be accessed across multiple source files in a program.
+    Key Points:
+      Variables declared with the `extern` keyword have external storage class.
+      They are defined in one source file and declared as extern in other source files where they are accessed.
+      They have global scope and can be accessed from any function within the program.
+      Example: `extern int globalVariable;` in one source file and `int globalVariable;` in another source file.
+
+Summary:
+Storage classes in C play a crucial role in defining the behavior, scope, and lifetime of variables, allowing programmers to effectively manage memory and control variable accessibility within a program.
+
+
+Q.5=>>>>>>>>>>
+Dynamic memory allocation in C is a way to allocate memory at runtime, allowing programs to manage memory more flexibly compared to static memory allocation, where memory is allocated at compile time. It enables programs to create, resize, and release memory blocks dynamically during program execution. The process involves using special functions provided by the C standard library to allocate and deallocate memory as needed. Let's break down the process and discuss the different dynamic memory allocation functions in C in a structured manner using simple words:
+
+Process of Dynamic Memory Allocation:
+
+Request Memory: 
+To allocate memory dynamically, a program requests memory from the system using special functions provided by the C standard library.
+Memory Allocation: Once the request is made, the system allocates a block of memory of the specified size and returns a pointer to the starting address of the allocated memory block.
+
+Use Memory: 
+The program can now use the allocated memory block to store data dynamically during program execution.
+
+Release Memory:
+ After the program finishes using the allocated memory, it should release the memory back to the system to prevent memory leaks and free up resources for other programs.
+Different Dynamic Memory Allocation Functions in C:
+
+malloc():
+
+Purpose: 
+The malloc() function is used to allocate a block of memory of a specified size in bytes.
+Syntax: void* malloc(size_t size);
+Return Value: Returns a pointer to the starting address of the allocated memory block or NULL if the allocation fails.
+calloc():
+
+Purpose: 
+The calloc() function is used to allocate a block of memory for an array of elements, initializing all bytes to zero.
+Syntax: void* calloc(size_t num, size_t size);
+Return Value: Returns a pointer to the starting address of the allocated memory block or NULL if the allocation fails.
+realloc():
+
+Purpose: The realloc() function is used to resize a previously allocated memory block, either increasing or decreasing its size.
+Syntax: void* realloc(void* ptr, size_t size);
+Return Value: Returns a pointer to the starting address of the resized memory block or NULL if the reallocation fails. The original content of the memory block is preserved up to the minimum of the old and new sizes.
+free():
+
+Purpose: The free() function is used to deallocate a previously allocated memory block, releasing the memory back to the system.
+Syntax: void free(void* ptr);
+Return Value: No return value. It simply deallocates the memory block pointed to by the given pointer.
+In summary, dynamic memory allocation in C involves requesting memory from the system at runtime using functions like malloc(), calloc(), and realloc(), using the allocated memory as needed, and releasing it using the free() function when it's no longer required. These functions provide programmers with the flexibility to manage memory dynamically during program execution, enabling efficient memory utilization and resource management.
+
+Q.6=>>>>>>>>>>>
+(a) Difference between Structure and Union in C:
+
+Purpose:
+
+Structure: A structure is used to define a collection of different data types under a single name.
+Union: A union is used to define a collection of different data types that share the same memory location.
+Memory Allocation:
+
+Structure: Each member of a structure has its own memory space, and the total memory allocated is the sum of the sizes of all members.
+Union: All members of a union share the same memory location, and the memory allocated is equal to the size of the largest member.
+Accessing Members:
+
+Structure: You can access individual members of a structure independently.
+Union: You can access only one member of a union at a time. Accessing a different member will overwrite the previous value.
+Size:
+
+Structure: The size of a structure is equal to the sum of the sizes of its members.
+Union: The size of a union is equal to the size of its largest member.
+Usage:
+
+Structure: Structures are commonly used to represent complex data types, such as employee records or student information.
+Union: Unions are used when you need to store different types of data in the same memory location, such as in network packet headers or hardware registers.
+(b) Concept of Macro Substitution in C Preprocessor Directives:
+
+Purpose:
+
+Macro substitution in C preprocessor directives allows you to define a symbolic name for a piece of code and substitute that name with the corresponding code during compilation.
+It helps in simplifying code, improving readability, and avoiding repetitive coding.
+Macro Definitions:
+
+Syntax: #define macro_name replacement_text
+Example:
+
+#define MAX(x, y) ((x) > (y) ? (x) : (y))
+In this example, MAX(x, y) is a macro that takes two arguments x and y and returns the maximum of the two.
+Macro Expansion:
+
+During compilation, whenever the macro name is encountered in the code, it is replaced with the corresponding replacement text.
+Example:
+int a = 5, b = 10;
+int max_value = MAX(a, b);
+After macro expansion:
+int a = 5, b = 10;
+int max_value = ((a) > (b) ? (a) : (b));
+Advantages:
+
+Reduces code redundancy by replacing repetitive code with macro names.
+Improves code readability and maintainability.
+Provides a convenient way to define constants, inline functions, or conditional compilation directives.
+Considerations:
+
+Macros are expanded by the preprocessor before compilation, which means they are not type-checked.
+Care should be taken to ensure that macros are defined properly to avoid unexpected behavior or errors.
+In summary, macro substitution in C preprocessor directives allows you to define symbolic names for code snippets and substitute them with their corresponding text during compilation. This simplifies coding, improves readability, and enables code reuse in C programs.
